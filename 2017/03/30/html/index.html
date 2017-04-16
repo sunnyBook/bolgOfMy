@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -92,7 +92,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="html">
 <meta property="og:url" content="http://yoursite.com/2017/03/30/html/index.html">
-<meta property="og:site_name" content=".a.l">
+<meta property="og:site_name" content="a.l">
 <meta property="og:description" content="HTML全名：HyperText markup language.中文名叫超文本标记语言。html是由一对一对的标签组成，每一对标签都有他特定的功能，而每一对标签又分头标签的尾标签1&amp;lt;html&amp;gt;&amp;lt;/html&amp;gt;
 例如上边就是一对最简单的标签,又称为html的根标签，就是以后写代码只能在这里面书写，不能写到外面！在&amp;lt;html&amp;gt;&amp;lt;/html&amp;gt;标签里面有两个">
 <meta property="og:updated_time" content="2017-04-01T08:30:17.076Z">
@@ -107,8 +107,8 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -133,7 +133,7 @@
 
 
 
-  <title> html | .a.l </title>
+  <title> html | a.l </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -158,7 +158,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -169,7 +169,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">.a.l</span>
+        <span class="site-title">a.l</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -277,11 +277,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="a.l">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://onpwbk1m1.bkt.clouddn.com/touxiang.jpg">
+      <meta itemprop="image" content="http://onpwbk1m1.bkt.clouddn.com/header.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content=".a.l">
+      <meta itemprop="name" content="a.l">
     </span>
 
     
@@ -343,6 +343,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/03/30/html/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -440,6 +450,8 @@
           
   <div class="comments" id="comments">
     
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
   </div>
 
 
@@ -474,7 +486,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="http://onpwbk1m1.bkt.clouddn.com/touxiang.jpg"
+               src="http://onpwbk1m1.bkt.clouddn.com/header.jpg"
                alt="a.l" />
           <p class="site-author-name" itemprop="name">a.l</p>
            
@@ -581,7 +593,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
@@ -620,6 +632,8 @@
   
 
 
+  
+
 
 
 
@@ -642,6 +656,9 @@
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
 
   
 
@@ -654,6 +671,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
@@ -683,6 +707,22 @@
 
 
   
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "5b4caae97cca4c848f2e8d5c9074b382",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
 
 
 
@@ -696,17 +736,6 @@
 
   
 
-
-
-
-
-
-  
-
-
-
-
-
   
 
   
@@ -714,6 +743,7 @@
   
 
   
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 </body>
 </html>
