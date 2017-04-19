@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="sunny and book" />
+  <meta name="keywords" content="HTML5," />
 
 
 
@@ -87,15 +87,34 @@
 
 
 
-<meta name="description" content="To be better">
-<meta property="og:type" content="website">
-<meta property="og:title" content="AL's Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="效果图
+canvas上下文对象的globalCompositeOperation属性：
+刮刮卡功能主要是使用这个值的设置来实现的，之前介绍过globalCompositeOperation属性共有11种值，详细介绍可以访问HTML 5 Canvas 参考手册
+这里简单的对11种值做一下截图：
+
+他这里写的源对象可以理解为后加上去的图形，就是在原有图形上后添加的图形。刮刮卡功能的实现就是使用ctx.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="canvas实现刮刮卡">
+<meta property="og:url" content="http://yoursite.com/2017/04/19/canvas实现刮刮卡/canvas实现刮刮卡/index.html">
 <meta property="og:site_name" content="AL's Blog">
-<meta property="og:description" content="To be better">
+<meta property="og:description" content="效果图
+canvas上下文对象的globalCompositeOperation属性：
+刮刮卡功能主要是使用这个值的设置来实现的，之前介绍过globalCompositeOperation属性共有11种值，详细介绍可以访问HTML 5 Canvas 参考手册
+这里简单的对11种值做一下截图：
+
+他这里写的源对象可以理解为后加上去的图形，就是在原有图形上后添加的图形。刮刮卡功能的实现就是使用ctx.">
+<meta property="og:image" content="http://img.blog.csdn.net/20170419215058296?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU3Vuc2hpbmVhbmw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170419215939854?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU3Vuc2hpbmVhbmw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-04-19T14:07:25.383Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AL's Blog">
-<meta name="twitter:description" content="To be better">
+<meta name="twitter:title" content="canvas实现刮刮卡">
+<meta name="twitter:description" content="效果图
+canvas上下文对象的globalCompositeOperation属性：
+刮刮卡功能主要是使用这个值的设置来实现的，之前介绍过globalCompositeOperation属性共有11种值，详细介绍可以访问HTML 5 Canvas 参考手册
+这里简单的对11种值做一下截图：
+
+他这里写的源对象可以理解为后加上去的图形，就是在原有图形上后添加的图形。刮刮卡功能的实现就是使用ctx.">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170419215058296?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU3Vuc2hpbmVhbmw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -123,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/19/canvas实现刮刮卡/canvas实现刮刮卡/"/>
 
 
 
 
 
-  <title> AL's Blog </title>
+  <title> canvas实现刮刮卡 | AL's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,9 +173,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-   page-home 
- ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -259,9 +276,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -291,10 +308,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/04/19/canvas实现刮刮卡/canvas实现刮刮卡/" itemprop="url">
-                  canvas实现刮刮卡
-                </a>
+                canvas实现刮刮卡
               
             
           </h1>
@@ -345,6 +359,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/04/19/canvas实现刮刮卡/canvas实现刮刮卡/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -377,380 +401,78 @@
       
 
       
+        <h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="http://img.blog.csdn.net/20170419215058296?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU3Vuc2hpbmVhbmw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><strong>canvas上下文对象的globalCompositeOperation属性：</strong></p>
+<p>刮刮卡功能主要是使用这个值的设置来实现的，之前介绍过globalCompositeOperation属性共有11种值，详细介绍可以访问<a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp" target="_blank" rel="external">HTML 5 Canvas 参考手册</a></p>
+<p>这里简单的对11种值做一下截图：</p>
+<p><img src="http://img.blog.csdn.net/20170419215939854?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU3Vuc2hpbmVhbmw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><em>他这里写的源对象可以理解为后加上去的图形，就是在原有图形上后添加的图形。</em><br>刮刮卡功能的实现就是使用<strong>ctx.globalCompositeOperation = ‘destination-out’;</strong>来实现的。</p>
+<h2 id="下面附上实现代码："><a href="#下面附上实现代码：" class="headerlink" title="下面附上实现代码："></a>下面附上实现代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;title&gt;Document&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        canvas &#123;</div><div class="line">            background-image: url(&apos;guaguale.jpg&apos;);</div><div class="line">            background-size : 100% 100%;</div><div class="line">            width: 300px;</div><div class="line">            height: 150px;</div><div class="line">            border: 1px solid #000;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;canvas id=&quot;canvas&quot;&gt;&lt;/canvas&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        var canvas = document.getElementById(&apos;canvas&apos;);</div><div class="line">        var ctx = canvas.getContext(&apos;2d&apos;);</div><div class="line">        ctx.beginPath();</div><div class="line">        ctx.fillStyle = &quot;#999&quot;;</div><div class="line">        ctx.fillRect(0,0,500,500);</div><div class="line">        ctx.fill();</div><div class="line">        canvas.onmousedown = function () &#123;</div><div class="line">            canvas.onmousemove = function (e) &#123;</div><div class="line">                var event = e || window.event;</div><div class="line">                ctx.globalCompositeOperation = &apos;destination-out&apos;;</div><div class="line">                ctx.beginPath();</div><div class="line">                ctx.arc(e.clientX, e.clientY, 30, 0, Math.PI*2, false);</div><div class="line">                ctx.fillStyle = &quot;rgba(0,0,0,1)&quot;;</div><div class="line">                ctx.fill();</div><div class="line">            &#125;</div><div class="line">            canvas.onmouseup = function () &#123;</div><div class="line">                canvas.onmousemove = function () &#123;</div><div class="line">                    return false;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
         
-          
-          效果图
-canvas上下文对象的globalCompositeOperation属性：
-刮刮卡功能主要是使用这个值的设置来实现的，之前介绍过globalCompositeOperation属性共有11种值，详细介绍可以访问HTML 5 Canvas 参考手册
-这里简单的对11种值做一下截图：
 
-他这
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/19/canvas实现刮刮卡/canvas实现刮刮卡/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
-      
-    </div>
-
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/19/canvas实现高斯模糊/canvas实现高斯模糊/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="a.l">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://onpwbk1m1.bkt.clouddn.com/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AL's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/19/canvas实现高斯模糊/canvas实现高斯模糊/" itemprop="url">
-                  canvas实现高斯模糊
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T14:34:11+08:00">
-                2017-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML5/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/04/19/canvas实现高斯模糊/canvas实现高斯模糊/" class="leancloud_visitors" data-flag-title="canvas实现高斯模糊">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
+            <a href="/tags/HTML5/" rel="tag"># HTML5</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          
-          对于模糊图片这个效果的实现，其实css3中的filter属性也能够实现，但是这个属性的兼容性不是很好，所以我们通常不用这种方法实现，而使用canvas配合JS实现。
-高斯模糊就是按照高斯曲线对图片进行模糊处理，所谓”模糊”，可以理解成每个像素都取周边像素的平均值，这样的话就会是图片像素值处于一种“平
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/19/canvas实现高斯模糊/canvas实现高斯模糊/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+      
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/19/canvas实现高斯模糊/canvas实现高斯模糊/" rel="next" title="canvas实现高斯模糊">
+                <i class="fa fa-chevron-left"></i> canvas实现高斯模糊
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/18/HTML5-canvas/HTML5-canvas/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="a.l">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://onpwbk1m1.bkt.clouddn.com/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AL's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/18/HTML5-canvas/HTML5-canvas/" itemprop="url">
-                  HTML5-canvas
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-18T22:24:46+08:00">
-                2017-04-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML5/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/04/18/HTML5-canvas/HTML5-canvas/" class="leancloud_visitors" data-flag-title="HTML5-canvas">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          什么是canvas?HTML5 &lt;canvas&gt; 元素用于图形的绘制，通过脚本 (通常是JS)来完成.&lt;canvas&gt; 标签只是图形容器，必须使用脚本来绘制图形
-浏览器支持情况
-如何使用canvas？
-添加canvas标签
-
-获得canavs元素（可以理解为画布）
-
-获得ca
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/18/HTML5-canvas/HTML5-canvas/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -758,6 +480,12 @@ canvas上下文对象的globalCompositeOperation属性：
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
 
         </div>
         
@@ -777,8 +505,17 @@ canvas上下文对象的globalCompositeOperation属性：
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://onpwbk1m1.bkt.clouddn.com/header.jpg"
@@ -840,6 +577,22 @@ canvas上下文对象的globalCompositeOperation属性：
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#效果图"><span class="nav-number">1.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下面附上实现代码："><span class="nav-number">2.</span> <span class="nav-text">下面附上实现代码：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -959,6 +712,10 @@ canvas上下文对象的globalCompositeOperation属性：
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
