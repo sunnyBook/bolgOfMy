@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="sunny and book" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -87,15 +87,28 @@
 
 
 
-<meta name="description" content="To be better">
-<meta property="og:type" content="website">
-<meta property="og:title" content="AL's Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="本篇介绍一下JavaScript DOM可能是最耗时间的重绘和重排问题。
+浏览器下载完页面中的所有组件——HTML标记，JavaScript，CSS，图片之后会解析并生成两个内部数据结构：DOM树 、渲染树。
+
+重排：
+当DOM元素的变化影响了元素的几何属性（宽、高等）——比如改变边框宽度或给段落增加文字，导致行数增加，浏览器需要重新计算元素的几何属性，同样其他元素的几何属性也会受到影响。浏览器会">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高性能JavaScript--重绘重排">
+<meta property="og:url" content="http://yoursite.com/2017/04/20/高性能JavaScript-重绘重排/高性能JavaScript-重绘重排/index.html">
 <meta property="og:site_name" content="AL's Blog">
-<meta property="og:description" content="To be better">
+<meta property="og:description" content="本篇介绍一下JavaScript DOM可能是最耗时间的重绘和重排问题。
+浏览器下载完页面中的所有组件——HTML标记，JavaScript，CSS，图片之后会解析并生成两个内部数据结构：DOM树 、渲染树。
+
+重排：
+当DOM元素的变化影响了元素的几何属性（宽、高等）——比如改变边框宽度或给段落增加文字，导致行数增加，浏览器需要重新计算元素的几何属性，同样其他元素的几何属性也会受到影响。浏览器会">
+<meta property="og:updated_time" content="2017-04-20T13:22:22.252Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AL's Blog">
-<meta name="twitter:description" content="To be better">
+<meta name="twitter:title" content="高性能JavaScript--重绘重排">
+<meta name="twitter:description" content="本篇介绍一下JavaScript DOM可能是最耗时间的重绘和重排问题。
+浏览器下载完页面中的所有组件——HTML标记，JavaScript，CSS，图片之后会解析并生成两个内部数据结构：DOM树 、渲染树。
+
+重排：
+当DOM元素的变化影响了元素的几何属性（宽、高等）——比如改变边框宽度或给段落增加文字，导致行数增加，浏览器需要重新计算元素的几何属性，同样其他元素的几何属性也会受到影响。浏览器会">
 
 
 
@@ -123,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/20/高性能JavaScript-重绘重排/高性能JavaScript-重绘重排/"/>
 
 
 
 
 
-  <title> AL's Blog </title>
+  <title> 高性能JavaScript--重绘重排 | AL's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,9 +167,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-   page-home 
- ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -259,9 +270,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -291,10 +302,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/04/20/高性能JavaScript-重绘重排/高性能JavaScript-重绘重排/" itemprop="url">
-                  高性能JavaScript--重绘重排
-                </a>
+                高性能JavaScript--重绘重排
               
             
           </h1>
@@ -345,6 +353,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/04/20/高性能JavaScript-重绘重排/高性能JavaScript-重绘重排/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -377,542 +395,121 @@
       
 
       
+        <p>本篇介绍一下JavaScript DOM可能是最耗时间的重绘和重排问题。</p>
+<p><strong>浏览器下载完页面中的所有组件——HTML标记，JavaScript，CSS，图片之后会解析并生成两个内部数据结构：<em>DOM树 、渲染树。</em></strong></p>
+<ul>
+<li><p>重排：</p>
+<pre><code>当DOM元素的变化影响了元素的几何属性（宽、高等）——比如改变边框宽度或给段落增加文字，导致行数增加，浏览器需要重新计算元素的几何属性，同样其他元素的几何属性也会受到影响。浏览器会重新构造渲染树。
+</code></pre></li>
+<li><p>重绘：</p>
+<pre><code>重排完，浏览器会重新绘制受影响的部分到屏幕中。
+</code></pre></li>
+</ul>
+<h2 id="重排什么时候发生？"><a href="#重排什么时候发生？" class="headerlink" title="重排什么时候发生？"></a>重排什么时候发生？</h2><ul>
+<li>添加或删除可见的DOM元素</li>
+<li>元素位置改变</li>
+<li>元素尺寸改变 （包括内、外边距等属性）</li>
+<li>内容改变 （图片被不同尺寸的图片代替）</li>
+<li>页面渲染器初始化</li>
+<li>浏览器窗口尺寸改变（不间断地改变浏览器窗口大小，导致UI反应迟钝（某些低版本IE下甚至直接挂掉），这就是重绘重排问题导致的）</li>
+</ul>
+<h2 id="渲染树变化的排队与刷新"><a href="#渲染树变化的排队与刷新" class="headerlink" title="渲染树变化的排队与刷新"></a>渲染树变化的排队与刷新</h2><p>阅读下列代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var e = document.getElementById(&apos;myDiv&apos;);</div><div class="line">el.style.borderLeft = &apos;1px&apos;;</div><div class="line">el.style.borderRight = &apos;2px&apos;;</div><div class="line">el.style.padding = &apos;5px&apos;;</div></pre></td></tr></table></figure></p>
+<pre><code>感觉上述代码执行了三次的重排、重绘，但其实大部分现在的浏览器都为此做了优化，只会触发一次重排。由于每次重排都会产生计算消耗，大部分浏览器都通过队列修改并批量执行来优化重排过程。
+但是我们可能会不知不觉的强制刷新队列，并要求任务立刻执行。
+</code></pre><ul>
+<li>offsetTop, offsetLeft, offsetWidth, offsetHeight</li>
+<li>scrollTop, scrollLeft, scrollWidth, scrollHeight</li>
+<li>clientTop, clientLeft, clientWidth, clientHeight</li>
+<li><p>getComputedStyle()</p>
+<p>上面的方法和属性需要返回最新的布局信息，因此浏览器不得不执行渲染队列中的待处理变化并触发重排以返回正确的值。所以，在修改样式的时候，应该避免使用上面列出的属性。</p>
+</li>
+</ul>
+<h2 id="最小化重排和重绘"><a href="#最小化重排和重绘" class="headerlink" title="最小化重排和重绘"></a>最小化重排和重绘</h2><pre><code>为了减少重绘，重排发生的次数，应该合并多次对DOM和样式的修改，一次性处理掉。
+合并所有的改变然后一次处理，这样只会修改DOM一次，可以使用cssText属性实现：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">el.style.cssText += &apos;border-left:1px; border-right:2px; padding:5px; &apos;;</div></pre></td></tr></table></figure>
+<h2 id="批量修改DOM"><a href="#批量修改DOM" class="headerlink" title="批量修改DOM"></a>批量修改DOM</h2><p>通过以下可以减少重绘和重排的次数：</p>
+<ol>
+<li>使元素脱离文档流</li>
+<li>对其应用多重改变</li>
+<li>把元素带回文档中</li>
+</ol>
+<p>这里只会触发两次重排第一步和第三步</p>
+<p>有三种方法可以使DOM脱离文档：</p>
+<ol>
+<li>隐藏元素，应用修改，重新修改</li>
+<li>使用文档断片</li>
+<li>将原始元素拷贝到一个脱离文档流的节点中，修改副本，完成后在替换原始元素</li>
+</ol>
+<h2 id="尽可能使用文档断片（document-fragment）"><a href="#尽可能使用文档断片（document-fragment）" class="headerlink" title="尽可能使用文档断片（document fragment）"></a>尽可能使用文档断片（document fragment）</h2><p>文档断片是个轻量级的document对象，设计的初衷就是为了完成更新和设计节点。使用文档断片时，当你附加一个断片到节点中时，实际上被添加的是该断片的<strong>子节点</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var fragment = document.createDocumentFragment();</div><div class="line">var oP = document.createElement(&apos;p&apos;);</div><div class="line">oP.innerText = &apos;文档断片&apos;;</div><div class="line">fragment.appendChild(oP);</div><div class="line">document.appendChild(fragment);</div></pre></td></tr></table></figure>
+<p>上述代码只触发了一次重排。</p>
+<p>参考资料——《高性能JavaScript》</p>
+
+      
+    </div>
+
+    <div>
+      
         
-          
-          本篇介绍一下JavaScript DOM可能是最耗时间的重绘和重排问题。
-浏览器下载完页面中的所有组件——HTML标记，JavaScript，CSS，图片之后会解析并生成两个内部数据结构：DOM树 、渲染树。
 
-重排：
-当DOM元素的变化影响了元素的几何属性（宽、高等）——比如改变边框宽度或给段落增
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/20/高性能JavaScript-重绘重排/高性能JavaScript-重绘重排/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
-      
-    </div>
-
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/19/canvas实现刮刮卡/canvas实现刮刮卡/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="a.l">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://onpwbk1m1.bkt.clouddn.com/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AL's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/19/canvas实现刮刮卡/canvas实现刮刮卡/" itemprop="url">
-                  canvas实现刮刮卡
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T22:06:45+08:00">
-                2017-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML5/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/04/19/canvas实现刮刮卡/canvas实现刮刮卡/" class="leancloud_visitors" data-flag-title="canvas实现刮刮卡">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          
-          效果图
-canvas上下文对象的globalCompositeOperation属性：
-刮刮卡功能主要是使用这个值的设置来实现的，之前介绍过globalCompositeOperation属性共有11种值，详细介绍可以访问HTML 5 Canvas 参考手册
-这里简单的对11种值做一下截图：
-
-他这
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/19/canvas实现刮刮卡/canvas实现刮刮卡/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+      
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/19/canvas实现刮刮卡/canvas实现刮刮卡/" rel="next" title="canvas实现刮刮卡">
+                <i class="fa fa-chevron-left"></i> canvas实现刮刮卡
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/19/canvas实现高斯模糊/canvas实现高斯模糊/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="a.l">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://onpwbk1m1.bkt.clouddn.com/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AL's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/19/canvas实现高斯模糊/canvas实现高斯模糊/" itemprop="url">
-                  canvas实现高斯模糊
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T14:34:11+08:00">
-                2017-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML5/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/04/19/canvas实现高斯模糊/canvas实现高斯模糊/" class="leancloud_visitors" data-flag-title="canvas实现高斯模糊">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          对于模糊图片这个效果的实现，其实css3中的filter属性也能够实现，但是这个属性的兼容性不是很好，所以我们通常不用这种方法实现，而使用canvas配合JS实现。
-高斯模糊就是按照高斯曲线对图片进行模糊处理，所谓”模糊”，可以理解成每个像素都取周边像素的平均值，这样的话就会是图片像素值处于一种“平
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/19/canvas实现高斯模糊/canvas实现高斯模糊/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/18/HTML5-canvas/HTML5-canvas/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="a.l">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://onpwbk1m1.bkt.clouddn.com/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AL's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/18/HTML5-canvas/HTML5-canvas/" itemprop="url">
-                  HTML5-canvas
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-18T22:24:46+08:00">
-                2017-04-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML5/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/04/18/HTML5-canvas/HTML5-canvas/" class="leancloud_visitors" data-flag-title="HTML5-canvas">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          什么是canvas?HTML5 &lt;canvas&gt; 元素用于图形的绘制，通过脚本 (通常是JS)来完成.&lt;canvas&gt; 标签只是图形容器，必须使用脚本来绘制图形
-浏览器支持情况
-如何使用canvas？
-添加canvas标签
-
-获得canavs元素（可以理解为画布）
-
-获得ca
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/18/HTML5-canvas/HTML5-canvas/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -920,6 +517,12 @@ canvas上下文对象的globalCompositeOperation属性：
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
 
         </div>
         
@@ -939,8 +542,17 @@ canvas上下文对象的globalCompositeOperation属性：
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://onpwbk1m1.bkt.clouddn.com/header.jpg"
@@ -1002,6 +614,22 @@ canvas上下文对象的globalCompositeOperation属性：
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#重排什么时候发生？"><span class="nav-number">1.</span> <span class="nav-text">重排什么时候发生？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染树变化的排队与刷新"><span class="nav-number">2.</span> <span class="nav-text">渲染树变化的排队与刷新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最小化重排和重绘"><span class="nav-number">3.</span> <span class="nav-text">最小化重排和重绘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#批量修改DOM"><span class="nav-number">4.</span> <span class="nav-text">批量修改DOM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尽可能使用文档断片（document-fragment）"><span class="nav-number">5.</span> <span class="nav-text">尽可能使用文档断片（document fragment）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1121,6 +749,10 @@ canvas上下文对象的globalCompositeOperation属性：
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
