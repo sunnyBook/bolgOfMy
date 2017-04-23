@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="HTML5," />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -87,27 +87,19 @@
 
 
 
-<meta name="description" content="对于模糊图片这个效果的实现，其实css3中的filter属性也能够实现，但是这个属性的兼容性不是很好，所以我们通常不用这种方法实现，而使用canvas配合JS实现。
-高斯模糊就是按照高斯曲线对图片进行模糊处理，所谓”模糊”，可以理解成每个像素都取周边像素的平均值，这样的话就会是图片像素值处于一种“平滑化”，产生模糊的效果。
-局部模糊效果图
-gauss.js代码1234567891011121314">
+<meta name="description" content="盒子模型一个元素由四个部分组成margin,border,padding,content,分别是外边距，边框，内边距，内容区，content不是由属性构成的，而是由width和height构成的。
+margin：它设置这个元素距离外面靠近它的其他元素或浏览器的距离，这是一个复合属        性由margin-top, margin-right, margin-bottom, margin-le">
 <meta property="og:type" content="article">
-<meta property="og:title" content="canvas实现高斯模糊">
-<meta property="og:url" content="http://yoursite.com/2017/04/19/canvas实现高斯模糊/canvas实现高斯模糊/index.html">
+<meta property="og:title" content="CSS2.0 (二)——盒模型、层模型及其他">
+<meta property="og:url" content="http://yoursite.com/2017/04/23/CSS2-0-二-——盒模型、层模型及其他/CSS2-0-二-——盒模型、层模型及其他/index.html">
 <meta property="og:site_name" content="AL's Blog">
-<meta property="og:description" content="对于模糊图片这个效果的实现，其实css3中的filter属性也能够实现，但是这个属性的兼容性不是很好，所以我们通常不用这种方法实现，而使用canvas配合JS实现。
-高斯模糊就是按照高斯曲线对图片进行模糊处理，所谓”模糊”，可以理解成每个像素都取周边像素的平均值，这样的话就会是图片像素值处于一种“平滑化”，产生模糊的效果。
-局部模糊效果图
-gauss.js代码1234567891011121314">
-<meta property="og:image" content="http://img.blog.csdn.net/20170419142706141?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU3Vuc2hpbmVhbmw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-04-19T06:36:26.642Z">
+<meta property="og:description" content="盒子模型一个元素由四个部分组成margin,border,padding,content,分别是外边距，边框，内边距，内容区，content不是由属性构成的，而是由width和height构成的。
+margin：它设置这个元素距离外面靠近它的其他元素或浏览器的距离，这是一个复合属        性由margin-top, margin-right, margin-bottom, margin-le">
+<meta property="og:updated_time" content="2017-04-23T13:04:18.183Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="canvas实现高斯模糊">
-<meta name="twitter:description" content="对于模糊图片这个效果的实现，其实css3中的filter属性也能够实现，但是这个属性的兼容性不是很好，所以我们通常不用这种方法实现，而使用canvas配合JS实现。
-高斯模糊就是按照高斯曲线对图片进行模糊处理，所谓”模糊”，可以理解成每个像素都取周边像素的平均值，这样的话就会是图片像素值处于一种“平滑化”，产生模糊的效果。
-局部模糊效果图
-gauss.js代码1234567891011121314">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170419142706141?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU3Vuc2hpbmVhbmw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="CSS2.0 (二)——盒模型、层模型及其他">
+<meta name="twitter:description" content="盒子模型一个元素由四个部分组成margin,border,padding,content,分别是外边距，边框，内边距，内容区，content不是由属性构成的，而是由width和height构成的。
+margin：它设置这个元素距离外面靠近它的其他元素或浏览器的距离，这是一个复合属        性由margin-top, margin-right, margin-bottom, margin-le">
 
 
 
@@ -135,13 +127,13 @@ gauss.js代码1234567891011121314">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/19/canvas实现高斯模糊/canvas实现高斯模糊/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/23/CSS2-0-二-——盒模型、层模型及其他/CSS2-0-二-——盒模型、层模型及其他/"/>
 
 
 
 
 
-  <title> canvas实现高斯模糊 | AL's Blog </title>
+  <title> CSS2.0 (二)——盒模型、层模型及其他 | AL's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +272,7 @@ gauss.js代码1234567891011121314">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/19/canvas实现高斯模糊/canvas实现高斯模糊/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/23/CSS2-0-二-——盒模型、层模型及其他/CSS2-0-二-——盒模型、层模型及其他/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="a.l">
@@ -301,7 +293,7 @@ gauss.js代码1234567891011121314">
             
             
               
-                canvas实现高斯模糊
+                CSS2.0 (二)——盒模型、层模型及其他
               
             
           </h1>
@@ -316,8 +308,8 @@ gauss.js代码1234567891011121314">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T14:34:11+08:00">
-                2017-04-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-23T21:03:16+08:00">
+                2017-04-23
               </time>
             
 
@@ -339,8 +331,8 @@ gauss.js代码1234567891011121314">
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML5/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -357,7 +349,7 @@ gauss.js代码1234567891011121314">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/04/19/canvas实现高斯模糊/canvas实现高斯模糊/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/04/23/CSS2-0-二-——盒模型、层模型及其他/CSS2-0-二-——盒模型、层模型及其他/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -366,7 +358,7 @@ gauss.js代码1234567891011121314">
 
           
           
-             <span id="/2017/04/19/canvas实现高斯模糊/canvas实现高斯模糊/" class="leancloud_visitors" data-flag-title="canvas实现高斯模糊">
+             <span id="/2017/04/23/CSS2-0-二-——盒模型、层模型及其他/CSS2-0-二-——盒模型、层模型及其他/" class="leancloud_visitors" data-flag-title="CSS2.0 (二)——盒模型、层模型及其他">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -394,11 +386,103 @@ gauss.js代码1234567891011121314">
       
 
       
-        <p>对于模糊图片这个效果的实现，其实css3中的filter属性也能够实现，但是这个属性的兼容性不是很好，所以我们通常不用这种方法实现，而使用canvas配合JS实现。</p>
-<h2 id="高斯模糊"><a href="#高斯模糊" class="headerlink" title="高斯模糊"></a>高斯模糊</h2><p>就是按照高斯曲线对图片进行模糊处理，所谓”模糊”，可以理解成每个像素都取周边像素的平均值，这样的话就会是图片像素值处于一种“平滑化”，产生模糊的效果。</p>
-<h2 id="局部模糊效果图"><a href="#局部模糊效果图" class="headerlink" title="局部模糊效果图"></a>局部模糊效果图</h2><p><img src="http://img.blog.csdn.net/20170419142706141?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU3Vuc2hpbmVhbmw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<h2 id="gauss-js代码"><a href="#gauss-js代码" class="headerlink" title="gauss.js代码"></a>gauss.js代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">function gaussBlur(imgData) &#123;</div><div class="line">    var pixes = imgData.data;</div><div class="line">    var width = imgData.width;</div><div class="line">    var height = imgData.height;</div><div class="line">    var gaussMatrix = [],</div><div class="line">        gaussSum = 0,</div><div class="line">        x, y,</div><div class="line">        r, g, b, a,</div><div class="line">        i, j, k, len;</div><div class="line"></div><div class="line">    var radius = 10;</div><div class="line">    var sigma = 5;</div><div class="line"></div><div class="line">    a = 1 / (Math.sqrt(2 * Math.PI) * sigma);</div><div class="line">    b = -1 / (2 * sigma * sigma);</div><div class="line">    //生成高斯矩阵</div><div class="line">    for (i = 0, x = -radius; x &lt;= radius; x++, i++)&#123;</div><div class="line">        g = a * Math.exp(b * x * x);</div><div class="line">        gaussMatrix[i] = g;</div><div class="line">        gaussSum += g;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    //归一化, 保证高斯矩阵的值在[0,1]之间</div><div class="line">    for (i = 0, len = gaussMatrix.length; i &lt; len; i++) &#123;</div><div class="line">        gaussMatrix[i] /= gaussSum;</div><div class="line">    &#125;</div><div class="line">    //x 方向一维高斯运算</div><div class="line">    for (y = 0; y &lt; height; y++) &#123;</div><div class="line">        for (x = 0; x &lt; width; x++) &#123;</div><div class="line">            r = g = b = a = 0;</div><div class="line">            gaussSum = 0;</div><div class="line">            for(j = -radius; j &lt;= radius; j++)&#123;</div><div class="line">                k = x + j;</div><div class="line">                if(k &gt;= 0 &amp;&amp; k &lt; width)&#123;//确保 k 没超出 x 的范围</div><div class="line">                    //r,g,b,a 四个一组</div><div class="line">                    i = (y * width + k) * 4;</div><div class="line">                    r += pixes[i] * gaussMatrix[j + radius];</div><div class="line">                    g += pixes[i + 1] * gaussMatrix[j + radius];</div><div class="line">                    b += pixes[i + 2] * gaussMatrix[j + radius];</div><div class="line">                    // a += pixes[i + 3] * gaussMatrix[j];</div><div class="line">                    gaussSum += gaussMatrix[j + radius];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            i = (y * width + x) * 4;</div><div class="line">            // 除以 gaussSum 是为了消除处于边缘的像素, 高斯运算不足的问题</div><div class="line">            // console.log(gaussSum)</div><div class="line">            pixes[i] = r / gaussSum;</div><div class="line">            pixes[i + 1] = g / gaussSum;</div><div class="line">            pixes[i + 2] = b / gaussSum;</div><div class="line">            // pixes[i + 3] = a ;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    //y 方向一维高斯运算</div><div class="line">    for (x = 0; x &lt; width; x++) &#123;</div><div class="line">        for (y = 0; y &lt; height; y++) &#123;</div><div class="line">            r = g = b = a = 0;</div><div class="line">            gaussSum = 0;</div><div class="line">            for(j = -radius; j &lt;= radius; j++)&#123;</div><div class="line">                k = y + j;</div><div class="line">                if(k &gt;= 0 &amp;&amp; k &lt; height)&#123;//确保 k 没超出 y 的范围</div><div class="line">                    i = (k * width + x) * 4;</div><div class="line">                    r += pixes[i] * gaussMatrix[j + radius];</div><div class="line">                    g += pixes[i + 1] * gaussMatrix[j + radius];</div><div class="line">                    b += pixes[i + 2] * gaussMatrix[j + radius];</div><div class="line">                    // a += pixes[i + 3] * gaussMatrix[j];</div><div class="line">                    gaussSum += gaussMatrix[j + radius];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            i = (y * width + x) * 4;</div><div class="line">            pixes[i] = r / gaussSum;</div><div class="line">            pixes[i + 1] = g / gaussSum;</div><div class="line">            pixes[i + 2] = b / gaussSum;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return imgData;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="index-html代码"><a href="#index-html代码" class="headerlink" title="index.html代码"></a>index.html代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		canvas &#123;</div><div class="line">			border: 1px solid black;</div><div class="line">		&#125;</div><div class="line">		img &#123;</div><div class="line">			display: none;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;img src=&quot;1.jpg&quot; id=&quot;img&quot;&gt;</div><div class="line">	&lt;canvas width=&quot;450&quot; height=&quot;300&quot; id=&quot;canvas&quot;&gt;&lt;/canvas&gt;</div><div class="line">	&lt;script src=&quot;gauss.js&quot;&gt;&lt;/script&gt;</div><div class="line">	&lt;script&gt;</div><div class="line">		var img = document.getElementById(&apos;img&apos;);</div><div class="line">		var canvas = document.getElementById(&apos;canvas&apos;);</div><div class="line">		var ctx = canvas.getContext(&apos;2d&apos;);</div><div class="line">		img.onload = function () &#123;</div><div class="line">			ctx.drawImage(img, 0, 0, 450, 300);</div><div class="line">			var data = ctx.getImageData(225, 0, 450, 300);</div><div class="line">			var emptyData = ctx.createImageData(225, 300);</div><div class="line">			emptyData = gaussBlur(data);</div><div class="line">			ctx.putImageData(emptyData, 225, 0);</div><div class="line">		&#125;</div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+        <h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><p>一个元素由四个部分组成margin,border,padding,content,分别是外边距，边框，内边距，内容区，content不是由属性构成的，而是由width和height构成的。</p>
+<p><em>margin</em>：它设置这个元素距离外面靠近它的其他元素或浏览器的距离，这是一个复合属        性由margin-top, margin-right, margin-bottom, margin-left组成，也可以分开设置。复合属性的值也有四种写法：</p>
+<ol>
+<li>四个值  : 上，右，下，左 ——例如margin: 5px 10px 10px 20px;</li>
+<li>三个值 ： 上，左右，下</li>
+<li>两个值 ： 上下，左右</li>
+<li>一个值 ：    上下左右</li>
+</ol>
+<p>其实margin不属于一个盒子的模型部分，盒子模型只有content, padding, border</p>
+<p><strong>现代大部分的浏览器的body元素都有一个默认的margin值8px</strong></p>
+<h2 id="层模型（层定位）"><a href="#层模型（层定位）" class="headerlink" title="层模型（层定位）"></a>层模型（层定位）</h2><p>position的意思是定位,同样作用就是给元素施加定位。一共有四个static, absolute, relative, fixed</p>
+<hr>
+<ol>
+<li><p><strong>static</strong>: 默认的属性，当我们没有写position时默认就是这个</p>
+</li>
+<li><p><strong>absolute</strong> : 绝对定位, 它会使元素脱离当前位置进行定位,当元素脱离原来位置后,其他             元素就看不到他了,同时absolute也可以触发bfc</p>
+</li>
+<li><p><strong>relative</strong> : 相对定位, 它会让元素保留原来位置进行定位,后面元素会看到它的位置</p>
+</li>
+<li><p><strong>fixed</strong> : 相对于视口进行定位</p>
+</li>
+</ol>
+<p><em>当我们设置了定位后，这个元素就有四个属性可以使用了,分别是left，top,bottom,right这四个属性可以设置当前元素距离 左 右 上 下 边的距离。</em></p>
+<hr>
+<p>absolute与relative相比较：</p>
+<p>absolute : </p>
+<ol>
+<li>脱离原来位置进行定位</li>
+<li>相对于最近的有定位的父级进行定位</li>
+</ol>
+<p>relative:</p>
+<ol>
+<li>保留原来位置定位</li>
+<li>相对于对象本身定位</li>
+</ol>
+<h2 id="浮动模型和伪元素"><a href="#浮动模型和伪元素" class="headerlink" title="浮动模型和伪元素"></a>浮动模型和伪元素</h2><p><strong>浮动模型，float属性</strong> : float属性可以让元素像站队列一样浮动起来，他会让本来占满整行的元素只按照内容和设置的大小在父级里进行站队，当一行剩余不足，元素会自动换行。当容器不够大的时候，超出之后仍然按相同队形站队。</p>
+<p><em>浮动元素会像absolute的元素一样脱离文档流,但不会脱离文字流</em></p>
+<p>脱离文档流的意思就是正常的元素看不到他,这一点类似absolute,不脱离文字流则是display属性是inline或inline-block还是可以看到它,文字本身的属性是inline</p>
+<h2 id="单行文字溢出打点"><a href="#单行文字溢出打点" class="headerlink" title="单行文字溢出打点"></a>单行文字溢出打点</h2><p>下面是单行文字溢出打点的css代码：</p>
+<pre><code>div {
+    width : 100px;
+    height : 20px;
+    background-color : red;
+    overflow : hidden;
+    white-space : nowrap;//不让文字换行
+    text-overflow : ellipsis;//溢出部分打点
+}
+</code></pre><h2 id="背景图片和其他"><a href="#背景图片和其他" class="headerlink" title="背景图片和其他"></a>背景图片和其他</h2><p>背景图片属性：</p>
+<ul>
+<li><p>background-image : url(); 可以设置背景图片</p>
+</li>
+<li><p>background-size 可以设置背景图片大小</p>
+<pre><code>1.cover : 让浏览器一张图片尽可能充满容器,当图片大的时候会截掉多余部分
+2.contain : 让浏览器尽可能展示图片，剩余部分填充相同图片
+3.设置X,Y像素值：例如 background-size : 50px 50px;
+4.百分数 ： background-size : 50% 50%;
+</code></pre></li>
+<li><p>background-repeat : 默认是repeat,设置成no-repeat后，无论容器剩多少都不会复制填充了</p>
+</li>
+<li><p>background-position 这个属性也有两种写法——1.百分比   2.像素值</p>
+<p><strong>！！！当图片是用来展示图片信息，如果这个图片不是用来展示这个图片内容而是用来修饰的，如网站logo，一般用背景图</strong></p>
+</li>
+</ul>
+<h2 id="如何让背景图不出来的时候显示文字？"><a href="#如何让背景图不出来的时候显示文字？" class="headerlink" title="如何让背景图不出来的时候显示文字？"></a>如何让背景图不出来的时候显示文字？</h2><p>1、利用text-indent</p>
+<p>利用首行缩进,配合 white-space : nowrap 和 overflow : hidden；让元素内部有css时，被缩进到元素外，并被隐藏。</p>
+<p>2、背景图放到padding中，高度设置为0</p>
+<p>background-image是可以放在padding中的，我们利用padding-top撑起内容区，然后元素本身高度为0，这样当有css时，配合overflow : hidden;可以让文字隐藏，没css时，文字正常显示.（这种用的多）</p>
+<h1 id="额外知识"><a href="#额外知识" class="headerlink" title="额外知识"></a>额外知识</h1><table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th style="text-align:center">内核</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IE</td>
+<td style="text-align:center">trident</td>
+</tr>
+<tr>
+<td>chrome</td>
+<td style="text-align:center">blink/webkit</td>
+</tr>
+<tr>
+<td>firefox</td>
+<td style="text-align:center">gecko</td>
+</tr>
+<tr>
+<td>opera</td>
+<td style="text-align:center">presto</td>
+</tr>
+<tr>
+<td>safari</td>
+<td style="text-align:center">webkit</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -428,7 +512,7 @@ gauss.js代码1234567891011121314">
       
         <div class="post-tags">
           
-            <a href="/tags/HTML5/" rel="tag"># HTML5</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
         </div>
       
@@ -440,8 +524,8 @@ gauss.js代码1234567891011121314">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/18/HTML5-canvas/HTML5-canvas/" rel="next" title="HTML5-canvas">
-                <i class="fa fa-chevron-left"></i> HTML5-canvas
+              <a href="/2017/04/23/CSS-2-0-一/CSS-2-0-一/" rel="next" title="CSS 2.0 (一)">
+                <i class="fa fa-chevron-left"></i> CSS 2.0 (一)
               </a>
             
           </div>
@@ -449,10 +533,6 @@ gauss.js代码1234567891011121314">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/19/canvas实现刮刮卡/canvas实现刮刮卡/" rel="prev" title="canvas实现刮刮卡">
-                canvas实现刮刮卡 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -583,7 +663,7 @@ gauss.js代码1234567891011121314">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯模糊"><span class="nav-number">1.</span> <span class="nav-text">高斯模糊</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局部模糊效果图"><span class="nav-number">2.</span> <span class="nav-text">局部模糊效果图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gauss-js代码"><span class="nav-number">3.</span> <span class="nav-text">gauss.js代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#index-html代码"><span class="nav-number">4.</span> <span class="nav-text">index.html代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#盒子模型"><span class="nav-number">1.</span> <span class="nav-text">盒子模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#层模型（层定位）"><span class="nav-number">2.</span> <span class="nav-text">层模型（层定位）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮动模型和伪元素"><span class="nav-number">3.</span> <span class="nav-text">浮动模型和伪元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单行文字溢出打点"><span class="nav-number">4.</span> <span class="nav-text">单行文字溢出打点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背景图片和其他"><span class="nav-number">5.</span> <span class="nav-text">背景图片和其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何让背景图不出来的时候显示文字？"><span class="nav-number">6.</span> <span class="nav-text">如何让背景图不出来的时候显示文字？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#额外知识"><span class="nav-number"></span> <span class="nav-text">额外知识</span></a></div>
             
 
           </div>
