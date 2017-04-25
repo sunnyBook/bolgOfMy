@@ -90,9 +90,9 @@
 <meta name="description" content="margin塌陷问题和合并问题都只对垂直方向有效
 
 margin塌陷问题
- 这个问题是一个经典的浏览器内核问题。具体表现是当两个元素嵌套到一起时，外层盒模型的margin-top取两个元素中margin-top较大的值。
- 因为在正常的情况下内层元素是相对于外层元素进行移动，但是这时内层元素却相对于整个文档进行移动，好像外层元素没有“棚顶”一样，因此叫margin塌陷问题。
- margin塌陷问题">
+这个问题是一个经典的浏览器内核问题。具体表现是当两个元素嵌套到一起时，外层盒模型的margin-top取两个元素中margin-top较大的值。
+因为在正常的情况下内层元素是相对于外层元素进行移动，但是这时内层元素却相对于整个文档进行移动，好像外层元素没有“棚顶”一样，因此叫margin塌陷问题。
+margin塌陷问题触发示">
 <meta property="og:type" content="article">
 <meta property="og:title" content="margin塌陷与合并问题">
 <meta property="og:url" content="http://yoursite.com/2017/04/25/margin塌陷与合并问题/margin塌陷与合并问题/index.html">
@@ -100,18 +100,18 @@ margin塌陷问题
 <meta property="og:description" content="margin塌陷问题和合并问题都只对垂直方向有效
 
 margin塌陷问题
- 这个问题是一个经典的浏览器内核问题。具体表现是当两个元素嵌套到一起时，外层盒模型的margin-top取两个元素中margin-top较大的值。
- 因为在正常的情况下内层元素是相对于外层元素进行移动，但是这时内层元素却相对于整个文档进行移动，好像外层元素没有“棚顶”一样，因此叫margin塌陷问题。
- margin塌陷问题">
-<meta property="og:updated_time" content="2017-04-25T14:33:55.384Z">
+这个问题是一个经典的浏览器内核问题。具体表现是当两个元素嵌套到一起时，外层盒模型的margin-top取两个元素中margin-top较大的值。
+因为在正常的情况下内层元素是相对于外层元素进行移动，但是这时内层元素却相对于整个文档进行移动，好像外层元素没有“棚顶”一样，因此叫margin塌陷问题。
+margin塌陷问题触发示">
+<meta property="og:updated_time" content="2017-04-25T14:59:23.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="margin塌陷与合并问题">
 <meta name="twitter:description" content="margin塌陷问题和合并问题都只对垂直方向有效
 
 margin塌陷问题
- 这个问题是一个经典的浏览器内核问题。具体表现是当两个元素嵌套到一起时，外层盒模型的margin-top取两个元素中margin-top较大的值。
- 因为在正常的情况下内层元素是相对于外层元素进行移动，但是这时内层元素却相对于整个文档进行移动，好像外层元素没有“棚顶”一样，因此叫margin塌陷问题。
- margin塌陷问题">
+这个问题是一个经典的浏览器内核问题。具体表现是当两个元素嵌套到一起时，外层盒模型的margin-top取两个元素中margin-top较大的值。
+因为在正常的情况下内层元素是相对于外层元素进行移动，但是这时内层元素却相对于整个文档进行移动，好像外层元素没有“棚顶”一样，因此叫margin塌陷问题。
+margin塌陷问题触发示">
 
 
 
@@ -401,10 +401,10 @@ margin塌陷问题
         <p><strong>margin塌陷问题和合并问题都只对垂直方向有效</strong></p>
 <ol>
 <li><p>margin塌陷问题</p>
-<p> 这个问题是一个经典的浏览器内核问题。具体表现是当两个元素嵌套到一起时，外层盒模型的margin-top取两个元素中margin-top较大的值。</p>
-<p> 因为在正常的情况下内层元素是相对于外层元素进行移动，但是这时内层元素却相对于整个文档进行移动，好像外层元素没有“棚顶”一样，因此叫margin塌陷问题。</p>
-<p> margin塌陷问题触发示例：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;div class = &quot;wrapper&quot;&gt;</div><div class="line">    &lt;div class = &quot;content&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;!--css代码--&gt;</div><div class="line">.wrapper&#123;</div><div class="line">    width:200px;</div><div class="line">    height:200px;</div><div class="line">    background-color:red;</div><div class="line">    margin-top:100px;</div><div class="line">&#125;</div><div class="line">.content&#123;</div><div class="line">    width:100px;</div><div class="line">    height:100px;</div><div class="line">    background-color:green;</div><div class="line">    margin-top:150px;</div><div class="line">    </div><div class="line">    &lt;!--此时的margin-top为150px。--&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个问题是一个经典的浏览器内核问题。具体表现是当两个元素嵌套到一起时，外层盒模型的margin-top取两个元素中margin-top较大的值。</p>
+<p>因为在正常的情况下内层元素是相对于外层元素进行移动，但是这时内层元素却相对于整个文档进行移动，好像外层元素没有“棚顶”一样，因此叫margin塌陷问题。</p>
+<p>margin塌陷问题触发示例：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;div class = &quot;wrapper&quot;&gt;</div><div class="line">    &lt;div class = &quot;content&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;!--css代码--&gt;</div><div class="line">.wrapper&#123;</div><div class="line">    width:200px;</div><div class="line">    height:200px;</div><div class="line">    background-color:red;</div><div class="line">    margin-top:100px;</div><div class="line">&#125;</div><div class="line">.content&#123;</div><div class="line">    width:100px;</div><div class="line">    height:100px;</div><div class="line">    background-color:green;</div><div class="line">    margin-top:150px;</div><div class="line">    </div><div class="line">    &lt;!--此时的margin-top为150px。--&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>我们可以看到：此时的外层元素相对于整个文档的 margin-top = 150px;</p>
@@ -412,15 +412,13 @@ margin塌陷问题
 <p>1、给外层元素认为加一个“棚顶”:border。</p>
 <p>这种方法虽然能够解决问题，但是在日常开发中我们不使用它，因为他在外观上对元素进行了改变。</p>
 <p> 2、bfc–block format context 块级格式化上下文</p>
-<p> 每一个元素都是一个盒子，每一个盒子都符合一定的渲染规则。我们可以通过触发bfc方式，让特定盒子里的渲染规则发生变化。我们要给外层元素加一个特定属性来触发bfc来解决margin塌陷问题。触发bfc的方式有以下四种，我们可以根据实际的需求采用不同的方法。</p>
-<p>overflow:hidden;</p>
-<p>display:inline-block;</p>
-<p>position:absolute;</p>
-<p>float:left;</p>
+<p>每一个元素都是一个盒子，每一个盒子都符合一定的渲染规则。我们可以通过触发bfc方式，让特定盒子里的渲染规则发生变化。我们要给外层元素加一个特定属性来触发bfc来解决margin塌陷问题。触发bfc的方式有以下四种，我们可以根据实际的需求采用不同的方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">overflow:hidden;</div><div class="line"></div><div class="line">display:inline-block;</div><div class="line"></div><div class="line">position:absolute;</div><div class="line"></div><div class="line">float:left;</div></pre></td></tr></table></figure>
 <hr>
 <p>2.margin合并问题</p>
 <p>具体表现为两个元素并列时，两者相隔的外边距取的是两者所设置margin的最大值。</p>
-<p>margin合并问题触发示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;div class = &apos;box1&apos;&gt;box1&lt;/div&gt;</div><div class="line">&lt;div class = &apos;box2&apos;&gt;box2&lt;/div&gt;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&lt;!--css代码--&gt;</div><div class="line">.box1&#123;</div><div class="line">    background-color:red;</div><div class="line">    margin-bottom:100px;</div><div class="line">&#125;</div><div class="line">.box2&#123;</div><div class="line">    background-color:blue;</div><div class="line">    margin-top:150px;</div><div class="line">    &lt;!--此时两者相隔的外边距为下面的box2所设置的margin-top:150px。--&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>margin合并问题触发示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;div class = &apos;box1&apos;&gt;box1&lt;/div&gt;</div><div class="line">&lt;div class = &apos;box2&apos;&gt;box2&lt;/div&gt;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&lt;!--css代码--&gt;</div><div class="line">.box1&#123;</div><div class="line">    background-color:red;</div><div class="line">    margin-bottom:100px;</div><div class="line">&#125;</div><div class="line">.box2&#123;</div><div class="line">    background-color:blue;</div><div class="line">    margin-top:150px;</div><div class="line">    &lt;!--此时两者相隔的外边距为下面的box2所设置的margin-top:150px。--&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>   margin合并问题解决办法： </p>
 <p> 我们仍然用bfc来解决。可以给其中一个元素包起来，在外层元素中设置bfc渲染规则。此时这个元素的渲染规则就改变了，就能够解决这个问题。</p>
 <p> <strong>一般margin合并不解决，margin塌陷要解决</strong></p>
