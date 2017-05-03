@@ -87,46 +87,61 @@
 
 
 
-<meta name="description" content="JavaScript运行三部曲：
-语法分析
-预编译
-解释执行
+<meta name="description" content="创建对象的方法
+对象字面量
+构造函数
+Object.create（）
 
-预编译前奏 ：1、imply global（暗示全局变量）
-如果任何变量未经声明就赋值使用,此变量就会成为全局对象window所有,并成为window对象的一个属性
-2、一切声明的全局变量，都是window的属性
-eg、var a = 123 ===&amp;gt; window.a = 123
-预编译四部曲
-创建AO(Activation">
+对象字面量：
+12var obj = &amp;#123;&amp;#125;;//对象中的属性之间用逗号分隔
+构造函数：
+
+系统自带的构造函数
+
+12var obj = new Object();//系统自带的构造函数有很多，如Number(),String(),Boolean(),Array()
+
+自定义的构造函数
+
+其中自定义的构造函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript之预编译">
-<meta property="og:url" content="http://yoursite.com/2017/04/29/JavaScript之预编译/index.html">
+<meta property="og:title" content="JavaScript之对象、构造函数、包装类">
+<meta property="og:url" content="http://yoursite.com/2017/05/03/JavaScript之对象、构造函数、包装类/JavaScript之对象、构造函数、包装类/index.html">
 <meta property="og:site_name" content="AL's Blog">
-<meta property="og:description" content="JavaScript运行三部曲：
-语法分析
-预编译
-解释执行
+<meta property="og:description" content="创建对象的方法
+对象字面量
+构造函数
+Object.create（）
 
-预编译前奏 ：1、imply global（暗示全局变量）
-如果任何变量未经声明就赋值使用,此变量就会成为全局对象window所有,并成为window对象的一个属性
-2、一切声明的全局变量，都是window的属性
-eg、var a = 123 ===&amp;gt; window.a = 123
-预编译四部曲
-创建AO(Activation">
-<meta property="og:updated_time" content="2017-04-29T08:47:55.129Z">
+对象字面量：
+12var obj = &amp;#123;&amp;#125;;//对象中的属性之间用逗号分隔
+构造函数：
+
+系统自带的构造函数
+
+12var obj = new Object();//系统自带的构造函数有很多，如Number(),String(),Boolean(),Array()
+
+自定义的构造函数
+
+其中自定义的构造函数">
+<meta property="og:updated_time" content="2017-05-03T10:30:44.168Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript之预编译">
-<meta name="twitter:description" content="JavaScript运行三部曲：
-语法分析
-预编译
-解释执行
+<meta name="twitter:title" content="JavaScript之对象、构造函数、包装类">
+<meta name="twitter:description" content="创建对象的方法
+对象字面量
+构造函数
+Object.create（）
 
-预编译前奏 ：1、imply global（暗示全局变量）
-如果任何变量未经声明就赋值使用,此变量就会成为全局对象window所有,并成为window对象的一个属性
-2、一切声明的全局变量，都是window的属性
-eg、var a = 123 ===&amp;gt; window.a = 123
-预编译四部曲
-创建AO(Activation">
+对象字面量：
+12var obj = &amp;#123;&amp;#125;;//对象中的属性之间用逗号分隔
+构造函数：
+
+系统自带的构造函数
+
+12var obj = new Object();//系统自带的构造函数有很多，如Number(),String(),Boolean(),Array()
+
+自定义的构造函数
+
+其中自定义的构造函数">
 
 
 
@@ -154,13 +169,13 @@ eg、var a = 123 ===&amp;gt; window.a = 123
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/29/JavaScript之预编译/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/03/JavaScript之对象、构造函数、包装类/JavaScript之对象、构造函数、包装类/"/>
 
 
 
 
 
-  <title> JavaScript之预编译 | AL's Blog </title>
+  <title> JavaScript之对象、构造函数、包装类 | AL's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -299,7 +314,7 @@ eg、var a = 123 ===&amp;gt; window.a = 123
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/29/JavaScript之预编译/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/03/JavaScript之对象、构造函数、包装类/JavaScript之对象、构造函数、包装类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="a.l">
@@ -320,7 +335,7 @@ eg、var a = 123 ===&amp;gt; window.a = 123
             
             
               
-                JavaScript之预编译
+                JavaScript之对象、构造函数、包装类
               
             
           </h1>
@@ -335,8 +350,8 @@ eg、var a = 123 ===&amp;gt; window.a = 123
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-29T16:46:03+08:00">
-                2017-04-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-03T18:29:13+08:00">
+                2017-05-03
               </time>
             
 
@@ -376,7 +391,7 @@ eg、var a = 123 ===&amp;gt; window.a = 123
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/04/29/JavaScript之预编译/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/05/03/JavaScript之对象、构造函数、包装类/JavaScript之对象、构造函数、包装类/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -385,7 +400,7 @@ eg、var a = 123 ===&amp;gt; window.a = 123
 
           
           
-             <span id="/2017/04/29/JavaScript之预编译/" class="leancloud_visitors" data-flag-title="JavaScript之预编译">
+             <span id="/2017/05/03/JavaScript之对象、构造函数、包装类/JavaScript之对象、构造函数、包装类/" class="leancloud_visitors" data-flag-title="JavaScript之对象、构造函数、包装类">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -413,34 +428,54 @@ eg、var a = 123 ===&amp;gt; window.a = 123
       
 
       
-        <h2 id="JavaScript运行三部曲："><a href="#JavaScript运行三部曲：" class="headerlink" title="JavaScript运行三部曲："></a>JavaScript运行三部曲：</h2><ol>
-<li>语法分析</li>
-<li>预编译</li>
-<li>解释执行</li>
+        <h2 id="创建对象的方法"><a href="#创建对象的方法" class="headerlink" title="创建对象的方法"></a>创建对象的方法</h2><ol>
+<li>对象字面量</li>
+<li>构造函数</li>
+<li>Object.create（）</li>
 </ol>
-<h2 id="预编译前奏-："><a href="#预编译前奏-：" class="headerlink" title="预编译前奏 ："></a>预编译前奏 ：</h2><p>1、imply global（暗示全局变量）</p>
-<p>如果任何变量未经声明就赋值使用,此变量就会成为全局对象window所有,并成为window对象的一个属性</p>
-<p>2、一切声明的全局变量，都是window的属性</p>
-<p>eg、var a = 123 ===&gt; window.a = 123</p>
-<h2 id="预编译四部曲"><a href="#预编译四部曲" class="headerlink" title="预编译四部曲"></a>预编译四部曲</h2><ol>
-<li><p>创建AO(Activation Object)对象</p>
+<p><em>对象字面量：</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;&#125;;</div><div class="line">//对象中的属性之间用逗号分隔</div></pre></td></tr></table></figure>
+<p><em>构造函数：</em></p>
+<ul>
+<li>系统自带的构造函数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var obj = new Object();</div><div class="line">//系统自带的构造函数有很多，如Number(),String(),Boolean(),Array()</div></pre></td></tr></table></figure>
+<ul>
+<li>自定义的构造函数</li>
+</ul>
+<p>其中自定义的构造函数也是正常的函数，为了区分他和正常的函数，将构造函数的首字母大写。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">function Person() &#123;&#125;</div></pre></td></tr></table></figure>
+<p>有了构造函数之后，就可以通过new操作符来创建对象了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var oPerson = new Person();</div></pre></td></tr></table></figure>
+<p>另外，构造函数既然是函数，就可以传参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function Person (name, age) &#123;</div><div class="line">	this.name = name;</div><div class="line">	this.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var p = new Person(&apos;zhangsan&apos;,18);</div><div class="line">console.log(p.name); // 这里将打印出zhangsan</div></pre></td></tr></table></figure>
+<p><strong>为什么通过new操作符可以创建互相独立的对象呢</strong><br>原因很简单，就是当我们用new操作符创建对象的时候，会隐式的在构造函数里创建一个this对象，而且最终返回的也是这个this对象。</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function Person(age) &#123;</div><div class="line">	// var this = &#123;&#125;;</div><div class="line">	this.age = age;</div><div class="line">	//return this;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>注意：</strong>如果最后自己手动返回我们创建的对象，那么将不会在默认的隐式返回this对象了，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function Person (name) &#123;</div><div class="line">	var that = &#123;</div><div class="line">		name : &apos;zhangsan&apos;</div><div class="line">	&#125;</div><div class="line">	this.name = name;</div><div class="line">	return that;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var oPerson = new Person(&apos;lisi&apos;);</div><div class="line">console.log(oPerson.name); // 这里返回的是&apos;zhangsan&apos;，因为我们手动返回的that使得不会隐式的返回this对象了</div></pre></td></tr></table></figure>
+<p>但是如果我们返回的是不可改变得原始值，而不是对象，那么还是会自动的隐式返回this的，这里我就不做测试啦。</p>
+<h2 id="对象属性的增删改查"><a href="#对象属性的增删改查" class="headerlink" title="对象属性的增删改查"></a>对象属性的增删改查</h2><ol>
+<li><p>增</p>
+<p>对象名.属性名 = 要添加的属性值</p>
 </li>
-<li><p>找形参和变量声明，将变量和形参名作为AO属性名，值为undefined</p>
-</li>
-<li><p>将实参和形参相统一</p>
-</li>
-<li><p>在函数体里面找函数声明，值赋为函数体</p>
+<li><p>删</p>
 </li>
 </ol>
-<p>例：分析一下代码预编译过程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function fn (a) &#123;</div><div class="line">	var a = 123;</div><div class="line"></div><div class="line">	function a () &#123;&#125;</div><div class="line"></div><div class="line">	var b = function () &#123;&#125;</div><div class="line"></div><div class="line">	function d () &#123;&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">fn (1);</div></pre></td></tr></table></figure></p>
-<p>1、创建AO对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">AO = &#123;&#125;</div></pre></td></tr></table></figure>
-<p>2、找形参和变量声明，将变量和形参名作为AO属性名，值为undefined</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">AO = &#123;</div><div class="line">	a : undefined,</div><div class="line">	b : undefined</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>3、将实参和形参相统一</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">AO = &#123;</div><div class="line">	a : 1,</div><div class="line">	b : undefined</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>4、在函数体里面找函数声明，值赋为函数体</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">AO = &#123;</div><div class="line">	a : function () &#123;...&#125;,</div><div class="line">	b : undefined,</div><div class="line">	d : function () &#123;...&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function fun()&#123;</div><div class="line">	this.name = &apos;mm&apos;;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">var obj = new fun();</div><div class="line"> </div><div class="line">console.log(obj.name);//mm</div><div class="line"> </div><div class="line">delete obj.name;</div><div class="line"> </div><div class="line">console.log(obj.name); //undefined</div></pre></td></tr></table></figure>
+<ol>
+<li><p>改</p>
+<p>对象名.属性名 = 要添加的属性值</p>
+</li>
+<li><p>查</p>
+<p>对象名.属性名</p>
+</li>
+</ol>
+<h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var str = &apos;abcd&apos;;</div><div class="line">console.log(str.length); // 4</div></pre></td></tr></table></figure>
+<p>大家可能对上述代码有一点疑问，string类型明明就是原始值，怎么会有属性呢？</p>
+<p>这是因为，在调度str.length这一行代码之前，程序会自动把str包装成一个字符串对象，在这一行代码执行完之后再销毁这个字符串对象。</p>
+<p>所以当我们在执行str.length = 2;这句话之后，再打印str.length还是4</p>
+<p>其他类型的数据也是一样的，当我们给原始值加属性的时候，都是先隐式包装成对象，然后赋属性值之后在销毁这个对象;</p>
 
       
     </div>
@@ -621,7 +656,7 @@ eg、var a = 123 ===&amp;gt; window.a = 123
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript运行三部曲："><span class="nav-number">1.</span> <span class="nav-text">JavaScript运行三部曲：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预编译前奏-："><span class="nav-number">2.</span> <span class="nav-text">预编译前奏 ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预编译四部曲"><span class="nav-number">3.</span> <span class="nav-text">预编译四部曲</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建对象的方法"><span class="nav-number">1.</span> <span class="nav-text">创建对象的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象属性的增删改查"><span class="nav-number">2.</span> <span class="nav-text">对象属性的增删改查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包装类"><span class="nav-number">3.</span> <span class="nav-text">包装类</span></a></li></ol></div>
             
 
           </div>
