@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="sunny and book" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -87,16 +87,46 @@
 
 
 
-<meta name="description" content="To be better">
+<meta name="description" content="JavaScript运行三部曲：
+语法分析
+预编译
+解释执行
+
+预编译前奏 ：1、imply global（暗示全局变量）
+如果任何变量未经声明就赋值使用,此变量就会成为全局对象window所有,并成为window对象的一个属性
+2、一切声明的全局变量，都是window的属性
+eg、var a = 123 ===&amp;gt; window.a = 123
+预编译四部曲
+创建AO(Activation">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript之预编译">
 <meta property="og:url" content="http://yoursite.com/2017/04/29/JavaScript之预编译/JavaScript之预编译/index.html">
 <meta property="og:site_name" content="AL's Blog">
-<meta property="og:description" content="To be better">
-<meta property="og:updated_time" content="2017-04-29T08:46:03.496Z">
+<meta property="og:description" content="JavaScript运行三部曲：
+语法分析
+预编译
+解释执行
+
+预编译前奏 ：1、imply global（暗示全局变量）
+如果任何变量未经声明就赋值使用,此变量就会成为全局对象window所有,并成为window对象的一个属性
+2、一切声明的全局变量，都是window的属性
+eg、var a = 123 ===&amp;gt; window.a = 123
+预编译四部曲
+创建AO(Activation">
+<meta property="og:updated_time" content="2017-04-29T08:47:55.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript之预编译">
-<meta name="twitter:description" content="To be better">
+<meta name="twitter:description" content="JavaScript运行三部曲：
+语法分析
+预编译
+解释执行
+
+预编译前奏 ：1、imply global（暗示全局变量）
+如果任何变量未经声明就赋值使用,此变量就会成为全局对象window所有,并成为window对象的一个属性
+2、一切声明的全局变量，都是window的属性
+eg、var a = 123 ===&amp;gt; window.a = 123
+预编译四部曲
+创建AO(Activation">
 
 
 
@@ -316,6 +346,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -361,7 +413,35 @@
       
 
       
-        
+        <h2 id="JavaScript运行三部曲："><a href="#JavaScript运行三部曲：" class="headerlink" title="JavaScript运行三部曲："></a>JavaScript运行三部曲：</h2><ol>
+<li>语法分析</li>
+<li>预编译</li>
+<li>解释执行</li>
+</ol>
+<h2 id="预编译前奏-："><a href="#预编译前奏-：" class="headerlink" title="预编译前奏 ："></a>预编译前奏 ：</h2><p>1、imply global（暗示全局变量）</p>
+<p>如果任何变量未经声明就赋值使用,此变量就会成为全局对象window所有,并成为window对象的一个属性</p>
+<p>2、一切声明的全局变量，都是window的属性</p>
+<p>eg、var a = 123 ===&gt; window.a = 123</p>
+<h2 id="预编译四部曲"><a href="#预编译四部曲" class="headerlink" title="预编译四部曲"></a>预编译四部曲</h2><ol>
+<li><p>创建AO(Activation Object)对象</p>
+</li>
+<li><p>找形参和变量声明，将变量和形参名作为AO属性名，值为undefined</p>
+</li>
+<li><p>将实参和形参相统一</p>
+</li>
+<li><p>在函数体里面找函数声明，值赋为函数体</p>
+</li>
+</ol>
+<p>例：分析一下代码预编译过程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function fn (a) &#123;</div><div class="line">	var a = 123;</div><div class="line"></div><div class="line">	function a () &#123;&#125;</div><div class="line"></div><div class="line">	var b = function () &#123;&#125;</div><div class="line"></div><div class="line">	function d () &#123;&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">fn (1);</div></pre></td></tr></table></figure></p>
+<p>1、创建AO对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">AO = &#123;&#125;</div></pre></td></tr></table></figure>
+<p>2、找形参和变量声明，将变量和形参名作为AO属性名，值为undefined</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">AO = &#123;</div><div class="line">	a : undefined,</div><div class="line">	b : undefined</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>3、将实参和形参相统一</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">AO = &#123;</div><div class="line">	a : 1,</div><div class="line">	b : undefined</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>4、在函数体里面找函数声明，值赋为函数体</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">AO = &#123;</div><div class="line">	a : function () &#123;...&#125;,</div><div class="line">	b : undefined,</div><div class="line">	d : function () &#123;...&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -387,6 +467,12 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
       
 
       
@@ -457,8 +543,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://onpwbk1m1.bkt.clouddn.com/header.jpg"
@@ -520,6 +615,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript运行三部曲："><span class="nav-number">1.</span> <span class="nav-text">JavaScript运行三部曲：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预编译前奏-："><span class="nav-number">2.</span> <span class="nav-text">预编译前奏 ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预编译四部曲"><span class="nav-number">3.</span> <span class="nav-text">预编译四部曲</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
