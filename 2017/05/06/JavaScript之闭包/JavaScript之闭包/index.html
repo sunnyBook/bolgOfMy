@@ -89,21 +89,21 @@
 
 <meta name="description" content="闭包
 不同作用域之间不能够相互访问，但是我们如果在一个函数内部在定义一个函数，并且这个内部函数与外部函数的变量有关联，那么就可以通过返回这个内部函数，然后来返回外部函数里面的变量，所以闭包其实就是函数内部和函数外部的一个联系。
-12345678910111213function a () &amp;#123;	var demo1 = 123;	add = function () &amp;#123;		demo1">
+当函数执行完之后，函数的执行上下文就会被销毁，就无法访问里面的变量，但这个函数返回了一个依赖这个函数的新函数，也就是说这个没有被销毁的新函数的作用域链中还存在着对原来函数的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript之闭包">
 <meta property="og:url" content="http://yoursite.com/2017/05/06/JavaScript之闭包/JavaScript之闭包/index.html">
 <meta property="og:site_name" content="AL's Blog">
 <meta property="og:description" content="闭包
 不同作用域之间不能够相互访问，但是我们如果在一个函数内部在定义一个函数，并且这个内部函数与外部函数的变量有关联，那么就可以通过返回这个内部函数，然后来返回外部函数里面的变量，所以闭包其实就是函数内部和函数外部的一个联系。
-12345678910111213function a () &amp;#123;	var demo1 = 123;	add = function () &amp;#123;		demo1">
+当函数执行完之后，函数的执行上下文就会被销毁，就无法访问里面的变量，但这个函数返回了一个依赖这个函数的新函数，也就是说这个没有被销毁的新函数的作用域链中还存在着对原来函数的">
 <meta property="og:image" content="http://img.blog.csdn.net/20170506232148482?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU3Vuc2hpbmVhbmw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-05-06T15:23:27.919Z">
+<meta property="og:updated_time" content="2017-05-06T15:31:51.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript之闭包">
 <meta name="twitter:description" content="闭包
 不同作用域之间不能够相互访问，但是我们如果在一个函数内部在定义一个函数，并且这个内部函数与外部函数的变量有关联，那么就可以通过返回这个内部函数，然后来返回外部函数里面的变量，所以闭包其实就是函数内部和函数外部的一个联系。
-12345678910111213function a () &amp;#123;	var demo1 = 123;	add = function () &amp;#123;		demo1">
+当函数执行完之后，函数的执行上下文就会被销毁，就无法访问里面的变量，但这个函数返回了一个依赖这个函数的新函数，也就是说这个没有被销毁的新函数的作用域链中还存在着对原来函数的">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20170506232148482?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU3Vuc2hpbmVhbmw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
@@ -393,10 +393,11 @@
       
         <p><strong>闭包</strong></p>
 <p>不同作用域之间不能够相互访问，但是我们如果在一个函数内部在定义一个函数，并且这个内部函数与外部函数的变量有关联，那么就可以通过返回这个内部函数，然后来返回外部函数里面的变量，所以闭包其实就是函数内部和函数外部的一个联系。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function a () &#123;</div><div class="line">	var demo1 = 123;</div><div class="line">	add = function () &#123;</div><div class="line">		demo1 ++;</div><div class="line">	&#125;</div><div class="line">	return function () &#123;</div><div class="line">		console.log(demo1);</div><div class="line">	&#125;;</div><div class="line">&#125;</div><div class="line">var demo = a();</div><div class="line">demo(); // 123</div><div class="line">add();</div><div class="line">demo(); // 124</div></pre></td></tr></table></figure>
 <p>当函数执行完之后，函数的执行上下文就会被销毁，就无法访问里面的变量，但这个函数返回了一个依赖这个函数的新函数，也就是说这个没有被销毁的新函数的作用域链中还存在着对原来函数的作用域的引用，就导致我们原本的函数的上下文不会被销毁,这样的话我们就可以在外部，继续使用这个被销毁的函数的变量了。</p>
+<p>如下就是一个闭包实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function a () &#123;</div><div class="line">	var demo1 = 123;</div><div class="line">	add = function () &#123;</div><div class="line">		demo1 ++;</div><div class="line">	&#125;</div><div class="line">	return function () &#123;</div><div class="line">		console.log(demo1);</div><div class="line">	&#125;;</div><div class="line">&#125;</div><div class="line">var demo = a();</div><div class="line">demo(); // 123</div><div class="line">add();</div><div class="line">demo(); // 124</div></pre></td></tr></table></figure>
 <p><strong>闭包会造成的问题</strong></p>
-<p>当内部函数被保存到外部时，将会生成闭包。闭包会导致原有作用域链不释放，造成内存泄露。</p>
+<p>当内部函数被保存到外部时，将会生成闭包。闭包会导致原有作用域链不释放，造成内存泄露</p>
 <p><em>例：</em></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function a() &#123;</div><div class="line"></div><div class="line">	var num = 1;</div><div class="line">	function add() &#123;</div><div class="line">		num++;</div><div class="line">		console.log(num);</div><div class="line">	&#125;</div><div class="line">	return add;</div><div class="line">&#125;</div><div class="line">var demo = a();</div><div class="line">demo(); //2</div><div class="line">demo(); //3</div><div class="line">var demo1 = a();</div><div class="line">demo(); //2</div><div class="line">demo(); //3</div></pre></td></tr></table></figure>
 <h2 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h2><p><em>定义</em>：此类函数没有声明，在一次执行过后即释放，常被用作初始化工作。</p>
