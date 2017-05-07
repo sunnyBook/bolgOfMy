@@ -87,45 +87,52 @@
 
 
 
-<meta name="description" content="函数部分1、函数声明
+<meta name="description" content="数组
+数组的声明
 
-var demo = function ()｛｝　函数表达式
-function demo () {}  函数声明
-var demo = function () {} 命名函数表达式
+1、字面量方式 var arr = [];
+2、数组构造函数 
+var arr = new Array(1,2,3,4);
+console.log(arr); // 1,2,3,4
+注：如果在构造函数里只写一个数值，如new Array(5);这时这一个值就代表数组的长度。
 
-以上就是三种函数声明的方式。
-2、argument和return
+数组的读写
 
-每一个函数里面都有一个类数组属性argument，这个属性里面存的就是实参,arguments[0]就可以查看我们传递的第一">
+不可溢出读，但是可以溢出写。
+1234var arr = [1,2];console.l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript之函数与作用域">
-<meta property="og:url" content="http://yoursite.com/2017/05/06/JavaScript之函数与作用域/JavaScript之函数与作用域/index.html">
+<meta property="og:title" content="JavaScript之数组与克隆">
+<meta property="og:url" content="http://yoursite.com/2017/05/07/JavaScript之数组与克隆/JavaScript之数组与克隆/index.html">
 <meta property="og:site_name" content="AL's Blog">
-<meta property="og:description" content="函数部分1、函数声明
+<meta property="og:description" content="数组
+数组的声明
 
-var demo = function ()｛｝　函数表达式
-function demo () {}  函数声明
-var demo = function () {} 命名函数表达式
+1、字面量方式 var arr = [];
+2、数组构造函数 
+var arr = new Array(1,2,3,4);
+console.log(arr); // 1,2,3,4
+注：如果在构造函数里只写一个数值，如new Array(5);这时这一个值就代表数组的长度。
 
-以上就是三种函数声明的方式。
-2、argument和return
+数组的读写
 
-每一个函数里面都有一个类数组属性argument，这个属性里面存的就是实参,arguments[0]就可以查看我们传递的第一">
-<meta property="og:image" content="http://img.blog.csdn.net/20170506224117298?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU3Vuc2hpbmVhbmw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-05-06T14:46:37.598Z">
+不可溢出读，但是可以溢出写。
+1234var arr = [1,2];console.l">
+<meta property="og:updated_time" content="2017-05-07T11:02:56.852Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript之函数与作用域">
-<meta name="twitter:description" content="函数部分1、函数声明
+<meta name="twitter:title" content="JavaScript之数组与克隆">
+<meta name="twitter:description" content="数组
+数组的声明
 
-var demo = function ()｛｝　函数表达式
-function demo () {}  函数声明
-var demo = function () {} 命名函数表达式
+1、字面量方式 var arr = [];
+2、数组构造函数 
+var arr = new Array(1,2,3,4);
+console.log(arr); // 1,2,3,4
+注：如果在构造函数里只写一个数值，如new Array(5);这时这一个值就代表数组的长度。
 
-以上就是三种函数声明的方式。
-2、argument和return
+数组的读写
 
-每一个函数里面都有一个类数组属性argument，这个属性里面存的就是实参,arguments[0]就可以查看我们传递的第一">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170506224117298?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU3Vuc2hpbmVhbmw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+不可溢出读，但是可以溢出写。
+1234var arr = [1,2];console.l">
 
 
 
@@ -153,13 +160,13 @@ var demo = function () {} 命名函数表达式
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/06/JavaScript之函数与作用域/JavaScript之函数与作用域/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/07/JavaScript之数组与克隆/JavaScript之数组与克隆/"/>
 
 
 
 
 
-  <title> JavaScript之函数与作用域 | AL's Blog </title>
+  <title> JavaScript之数组与克隆 | AL's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -298,7 +305,7 @@ var demo = function () {} 命名函数表达式
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/JavaScript之函数与作用域/JavaScript之函数与作用域/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/07/JavaScript之数组与克隆/JavaScript之数组与克隆/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="a.l">
@@ -319,7 +326,7 @@ var demo = function () {} 命名函数表达式
             
             
               
-                JavaScript之函数与作用域
+                JavaScript之数组与克隆
               
             
           </h1>
@@ -334,8 +341,8 @@ var demo = function () {} 命名函数表达式
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T22:44:10+08:00">
-                2017-05-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-07T19:02:10+08:00">
+                2017-05-07
               </time>
             
 
@@ -375,7 +382,7 @@ var demo = function () {} 命名函数表达式
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/05/06/JavaScript之函数与作用域/JavaScript之函数与作用域/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/05/07/JavaScript之数组与克隆/JavaScript之数组与克隆/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -384,7 +391,7 @@ var demo = function () {} 命名函数表达式
 
           
           
-             <span id="/2017/05/06/JavaScript之函数与作用域/JavaScript之函数与作用域/" class="leancloud_visitors" data-flag-title="JavaScript之函数与作用域">
+             <span id="/2017/05/07/JavaScript之数组与克隆/JavaScript之数组与克隆/" class="leancloud_visitors" data-flag-title="JavaScript之数组与克隆">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -412,35 +419,71 @@ var demo = function () {} 命名函数表达式
       
 
       
-        <h2 id="函数部分"><a href="#函数部分" class="headerlink" title="函数部分"></a>函数部分</h2><p><strong>1、函数声明</strong></p>
-<ul>
-<li>var demo = function ()｛｝　函数表达式</li>
-<li>function demo () {}  函数声明</li>
-<li>var demo = function () {} 命名函数表达式</li>
+        <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul>
+<li>数组的声明</li>
 </ul>
-<p>以上就是三种函数声明的方式。</p>
-<p><strong>2、argument和return</strong></p>
+<p>1、字面量方式 var arr = [];</p>
+<p>2、数组构造函数 </p>
+<pre><code>var arr = new Array(1,2,3,4);
+console.log(arr); // 1,2,3,4
+</code></pre><p>注：如果在构造函数里只写一个数值，如new Array(5);这时这一个值就代表数组的长度。</p>
 <ul>
-<li><p>每一个函数里面都有一个类数组属性argument，这个属性里面存的就是实参,arguments[0]就可以查看我们传递的第一个实参了</p>
+<li>数组的读写</li>
+</ul>
+<p>不可溢出读，但是可以溢出写。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2];</div><div class="line">console.log(arr[3]); // undefined</div><div class="line">arr[5] = 5;</div><div class="line">console.log(arr[5]); // 5</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="数组常用方法"><a href="#数组常用方法" class="headerlink" title="数组常用方法"></a>数组常用方法</h2><p><strong>1、可以改变原数组的方法</strong></p>
+<ul>
+<li><p>reverse : 使数组倒叙</p>
 </li>
-<li><p>每一个函数都会有一个return，如果不写的话会自动加上一个return </p>
+<li><p>push : 在数组的最后一位添加数据</p>
+</li>
+<li><p>pop : 从数组后面删除一位数据，同属返回这个被删除的数据，没有参数</p>
+</li>
+<li><p>shift : 从前面删除一位数据，同时返回这个数据，没有参数</p>
+</li>
+<li><p>unshift : 在数据的最前面添加数据，和push一样的用法</p>
+</li>
+<li><p>splice ： 删除元素，并向数组添加新元素</p>
 </li>
 </ul>
-<p><em>return的功能：</em></p>
-<ol>
-<li>返回这个函数的执行结果</li>
-<li>终止函数的执行</li>
-</ol>
-<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>定义：变量(变量作用域又称为上下文)和函数生效的区域</p>
-<p>JavaScript函数是可以产生作用域的，两个不同作用域之间是不能互相访问的，es5中的作用域只有全局作用域和局部作用域两种，es6中添加了块级作用域的概念。</p>
-<h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><p>定义 ： 作用域中所存储的执行期上下文对象的集合，这个集合呈链式链接，我们把这种链式链接叫做作用域链。</p>
-<p>当代码在一个环境中执行时，会创建变量对象的一个作用域链来保证对执行环境有权访问的变量和函数的有序访问。作用域第一个对象始终是当前执行代码所在环境的变量环境</p>
-<p><strong>运行期上下文</strong></p>
-<p>当函数执行时，会创建一个称为执行期上下文的对象。一个执行期上下文定义了一个函数执行的环境，函数每次执行时对应的执行上下文都是独一无二的，所以多次调用一个函数会导致创建多个执行上下文，当函数执行完毕，他所产生的执行上下文被销毁。</p>
-<p>注：查找变量的时候是从作用域链的顶端依次向下查找的。</p>
-<p>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function a() &#123;</div><div class="line">	function b() &#123;</div><div class="line"></div><div class="line">		var b = 234;</div><div class="line">		document.write(aaa);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	var a = 123;</div><div class="line">	return b;</div><div class="line">	</div><div class="line">&#125;</div><div class="line">var glob = 100;</div><div class="line">var demo = a();</div><div class="line">demo();</div></pre></td></tr></table></figure>
-<p><img src="http://img.blog.csdn.net/20170506224117298?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU3Vuc2hpbmVhbmw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>第一个参数：截取开始的位置<br>第二个参数：截取的长度<br>第三个参数：一组数据，代表要截取的位置添加的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5];</div><div class="line">arr.splice(1,2,100,188);</div><div class="line">console.log(arr); // 1 100 188 4 5</div></pre></td></tr></table></figure>
+<ul>
+<li>sort : 对数组的元素进行排序</li>
+</ul>
+<p>这个方法会按照ASC码来排序，但是我们也可以通过传一个函数来规定排序的规则。</p>
+<p><strong>数组的数据进行随机的排序：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">arr.sort(function (a,b) &#123;</div><div class="line">	return Math.random - 0.5;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>上述代码中的a,b表示数组中的任意两个数据。</p>
+<p>然后可以根据函数中的返回值来进行排序。</p>
+<p>负数，表示a在前面，b在后面<br>正数，表示a在后面，a在前面</p>
+<p><strong>2、不可改变原数组的方法：</strong></p>
+<ul>
+<li>concat ： 连接两个或更多的数组，并返回结果。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">arr1 = [1,2]</div><div class="line">arr2 = [3,4]</div><div class="line">arr = arr1.concat(arr2);</div><div class="line">console.log(arr,arr1,arr2); // [1,2,2,3],[1,2],[2,3]</div></pre></td></tr></table></figure>
+<ul>
+<li>join ： 把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];</div><div class="line">var str = arr.join(&apos;-&apos;);</div><div class="line">console.log(str); // a-b-c</div></pre></td></tr></table></figure>
+<h2 id="数组检测的方法"><a href="#数组检测的方法" class="headerlink" title="数组检测的方法"></a>数组检测的方法</h2><ul>
+<li><p>ES5中有一个 isArray() 方法</p>
+</li>
+<li><p>constructor和instanceof操作符</p>
+</li>
+<li><p>Object.prototype.toString.call(arr) === ‘[object Array]’  //这个应该是最可靠的检测方法</p>
+</li>
+</ul>
+<h2 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h2><ul>
+<li>浅层克隆 ： 这种克隆方法一旦改变了源对象或者目标对象的引用值属性，另一个也会跟着改变。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function clone(src, tar) &#123;</div><div class="line">	var tar = tar || &#123;&#125;;</div><div class="line">	for (var prop in src) &#123;</div><div class="line">		if (src.hasOwnProperty(prop)) &#123;</div><div class="line">			tar[prop] = src[prop];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return tar;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>深层克隆：这样创建的目标对象和源对象之间就没有关系了，自己都是独立的，可以进行修改</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function deepCopy (src, tar) &#123;</div><div class="line">	var tar = tar || &#123;&#125;;</div><div class="line">	for (var prop in src) &#123;</div><div class="line">		if (typeof src[prop] == &apos;object&apos;) &#123;</div><div class="line">			tar[prop] = (src[prop].constructor === Array) ? [] : &#123;&#125;;</div><div class="line">			deepCopy(src[prop], tar[prop]);</div><div class="line">		&#125;else &#123;</div><div class="line">			tar[prop] = src[prop];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return tar;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -482,8 +525,8 @@ var demo = function () {} 命名函数表达式
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/04/JavaScript之继承、this问题和对象枚举/JavaScript之继承、this问题和对象枚举/" rel="next" title="JavaScript之继承、this问题和对象枚举">
-                <i class="fa fa-chevron-left"></i> JavaScript之继承、this问题和对象枚举
+              <a href="/2017/05/06/JavaScript之闭包/JavaScript之闭包/" rel="next" title="JavaScript之闭包">
+                <i class="fa fa-chevron-left"></i> JavaScript之闭包
               </a>
             
           </div>
@@ -491,10 +534,6 @@ var demo = function () {} 命名函数表达式
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/06/JavaScript之闭包/JavaScript之闭包/" rel="prev" title="JavaScript之闭包">
-                JavaScript之闭包 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -645,7 +684,7 @@ var demo = function () {} 命名函数表达式
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数部分"><span class="nav-number">1.</span> <span class="nav-text">函数部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域"><span class="nav-number">2.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域链"><span class="nav-number">3.</span> <span class="nav-text">作用域链</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组常用方法"><span class="nav-number">2.</span> <span class="nav-text">数组常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组检测的方法"><span class="nav-number">3.</span> <span class="nav-text">数组检测的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#克隆"><span class="nav-number">4.</span> <span class="nav-text">克隆</span></a></li></ol></div>
             
 
           </div>
